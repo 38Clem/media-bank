@@ -1,5 +1,5 @@
 <?php include __DIR__ . ('/../_header.html.php') ?>
-<div class="signup d-flex justify-content-center">
+<div class="sign-up d-flex justify-content-center">
     <div class="card border-secondary shadow p-3 mb-5 bg-white rounded">
         <img src="/assets/images/clapperSignUp.png" class="justify-item-center"/>
         <div class="card-body">

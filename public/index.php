@@ -71,7 +71,6 @@ try {
     $obj->$methodName();
 }
 
-//var_dump($e);
 /**
  * On veut un système de log
  */

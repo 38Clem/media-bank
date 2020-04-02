@@ -1,15 +1,12 @@
 body{
     background-color: ghostwhite;
+    height: 100vh;
 }
 
 h1{
     color: cornflowerblue;
 }
 
-.signup{
+.sign-up{
     margin-top: 10%;
-}
-
-span {
-    color: #EA0000;
 }

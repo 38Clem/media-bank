@@ -21,7 +21,6 @@ class AuthentificationController
         $passwordForm = new PasswordForm();
         $passwordForm->controlPassword($password);
 
-
         include __DIR__ . "/../../templates/authentification/login.html.php";
     }
 

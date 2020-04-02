@@ -1,14 +1,16 @@
 <?php include __DIR__ . ('/../_header.html.php') ?>
 
 
-<div class="card " style="height:40vh;">
-    <div class="search d-inline align-items-middle">
-        <span class="align-middle">middle</span>
-        <form method="get" class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
+<div class="card  d-flex justify-content-center border-secondary shadow p-3 mb-5 bg-white rounded" style="height:20vh;">
+    <form method="get" class="form-inline">
+        <div class="container">
+            <div class="row">
+                    <input class="form-control col-md-10 border-secondary" type="search" placeholder="Looking for a movie or a serie ?">
+                    <button class="btn btn-outline-success col-md-2 my-2 my-sm-0" type="submit">Search</button>
+            </div>
+        </div>
+
+    </form>
 </div>
 
 

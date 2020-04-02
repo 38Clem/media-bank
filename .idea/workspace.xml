@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/EmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmailForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PasswordForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_header.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_header.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/authentification/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentification/login.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/search.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/search.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/signup.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/signup.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <workItem from="1585639128309" duration="25307000" />
       <workItem from="1585723253577" duration="25039000" />
       <workItem from="1585760870866" duration="4166000" />
-      <workItem from="1585810869144" duration="22581000" />
+      <workItem from="1585810869144" duration="25229000" />
     </task>
     <servers />
   </component>
@@ -109,9 +108,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1607" y="362" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585660968173" />
-    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1585752053648">
+    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1585836684288">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585752053648" />
+    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585836684288" />
   </component>
 </project>

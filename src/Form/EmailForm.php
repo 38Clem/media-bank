@@ -33,7 +33,6 @@ class EmailForm
             }
         }
 
-
     }
 
     public function fillEmailEntity(Email $email)

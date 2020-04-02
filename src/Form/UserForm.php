@@ -41,8 +41,10 @@ class UserForm
         $name = filter_input(INPUT_POST, "name");
         if (null !== $name) {
             $user->setName($name);
-
-            if ($name === "") {
+            if ("" === $name) {
+                $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
+            }
+            if (3 > strlen($name) || strlen($name) > 12) {
                 $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
             }
 

@@ -35,23 +35,27 @@ class UserForm
 
     }
 
-    public function fillUserEntity(User $user)
+    public function controlUser($name)
     {
-
-        $name = filter_input(INPUT_POST, "name");
-        if (null !== $name) {
-            $user->setName($name);
-            if ("" === $name) {
+        if (null !== $name){
+           if(3 > strlen($name) || strlen($name) > 12) {
                 $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
-            }
-            if (3 > strlen($name) || strlen($name) > 12) {
-                $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
+            }else{
+                return true;
             }
 
         }
-        $this->emailForm->fillEmailEntity($user->getEmail());
-        $this->passwordForm->fillPasswordEntity($user->getPassword());
 
+    }
+
+    public function fillUser(User $user){
+        $name = filter_input(INPUT_POST, "name");
+        $control = $this->controlUser($name);
+        if($control){
+            $user->setName($name);
+        }
+        $this->emailForm->fillEmailEntity($user->getEmail());
+        $this->passwordForm->fillPasswordForm($user->getPassword());
     }
 
     /**

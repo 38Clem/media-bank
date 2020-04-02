@@ -18,9 +18,14 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/login">Log In</a>
-            </li>            <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/signup">Sign Up</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+            </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search Media" aria-label="Search">

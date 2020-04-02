@@ -22,18 +22,29 @@ class EmailForm
     {
     }
 
-    public function fillEmailEntity(Email $email){
 
+    public function controlEmail($value)
+    {
+        if(null !== $value){
+            if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
+                $this->error["email"] = "Invalid email adress";
+            }else{
+                return true;
+            }
+        }
+
+
+    }
+
+    public function fillEmailEntity(Email $email)
+    {
         $value = filter_input(INPUT_POST, "email");
         if ($value !== null) {
-            $email->setEmail(filter_input(
-                INPUT_POST,
-                "email"
-            ));
+            $control = $this->controlEmail($value);
+            if($control){
+                $email->setEmail($value);
+            }
 
-        if("" === $value){
-            $this->error["email"] = "Invalid email adress";
-        }
         }
     }
 

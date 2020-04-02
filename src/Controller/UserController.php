@@ -15,7 +15,7 @@ class UserController
         $user = new User();
         $userForm = new UserForm();
         $userForm->buildForm($user);
-        $userForm->fillUserEntity($user);
+        $userForm->fillUser($user);
         include __DIR__ . "/../../templates/user/signup.html.php";
     }
 

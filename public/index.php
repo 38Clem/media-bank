@@ -32,6 +32,10 @@ $routes = [
         "controller" => "App\Controller\UserController",
         "method" => "createUser"
     ],
+    "/search" => [
+        "controller" => "App\Controller\SearchController",
+        "method" => "search"
+    ],
     "/404" => [
         "controller" => "App\Controller\ErrorController",
         "method" => "error404"
@@ -67,6 +71,7 @@ try {
     $obj->$methodName();
 }
 
+//var_dump($e);
 /**
  * On veut un système de log
  */

@@ -15,12 +15,16 @@ use App\Entity\Password;
 class PasswordForm
 {
     private array $error = [
-        "password" => false,
-        "confirm" => false,
+        "password" => "",
+        "confirm" => "",
     ];
 
-    public function __construct(Password $password)
+    public function __construct()
     {
+
+    }
+
+    public function fillPasswordEntity(Password $password){
         $value = filter_input(INPUT_POST,"password");
         $confirmation = filter_input(INPUT_POST,"password_confirmation");
         if($value !== null){
@@ -28,15 +32,13 @@ class PasswordForm
                 INPUT_POST,
                 "password"
             ));
-
+            if("" === $value){
+                $this->error["password"] = "Your password must be between 6 and 24 characters ";
+            }
         }
 
-        if("" === $value){
-            $this->error["password"] = true;
-        }
-
-        if("" === $confirmation){
-            $this->error["confirm"] = true;
+        if($value !== $confirmation){
+            $this->error["confirm"] = "Confirmation Password doesn't match Password";
         }
     }
 

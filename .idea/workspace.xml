@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="" />
+    <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmailForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PasswordForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/signup.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/signup.html.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,12 +21,16 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZqC88rU1hAJxGxYXe6h5S6KnQA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -58,7 +71,7 @@
       <workItem from="1585639128309" duration="25307000" />
       <workItem from="1585723253577" duration="25039000" />
       <workItem from="1585760870866" duration="4166000" />
-      <workItem from="1585810869144" duration="2585000" />
+      <workItem from="1585810869144" duration="7806000" />
     </task>
     <servers />
   </component>
@@ -70,6 +83,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585752355872" />
+    <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585814221234">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585814221234" />
     <state x="1687" y="518" key="NewPhpClassDialog" timestamp="1585661026376">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -78,10 +95,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1754" y="627" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585727339003" />
-    <state x="1096" y="223" key="SettingsEditor" timestamp="1585733001621">
+    <state x="1096" y="223" key="SettingsEditor" timestamp="1585816322359">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1096" y="223" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585733001621" />
+    <state x="1096" y="223" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585816322359" />
     <state x="1707" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585638339221">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

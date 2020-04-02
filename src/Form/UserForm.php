@@ -19,31 +19,38 @@ class UserForm
     private EmailForm $emailForm;
     private PasswordForm $passwordForm;
     private array $error = [
-        "name" => false,
+        "name" => "",
     ];
-    private $submit = false;
-
 
     public function __construct()
     {
-
-
-        if ($name === "") {
-           $this->error["name"] = true;
-        }
-
     }
 
-    public function buildForm(User $user){
+
+    public function buildForm(User $user)
+    {
 
         $this->emailForm = new EmailForm($user->getEmail());
         $this->passwordForm = new PasswordForm($user->getPassword());
+
+    }
+
+    public function fillUserEntity(User $user)
+    {
+
         $name = filter_input(INPUT_POST, "name");
         if (null !== $name) {
-            $user->setName(filter_input(INPUT_POST, "name"));
-        }
+            $user->setName($name);
 
-}
+            if ($name === "") {
+                $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
+            }
+
+        }
+        $this->emailForm->fillEmailEntity($user->getEmail());
+        $this->passwordForm->fillPasswordEntity($user->getPassword());
+
+    }
 
     /**
      * @return array
@@ -68,7 +75,6 @@ class UserForm
     {
         return $this->passwordForm;
     }
-
 
 
 }

@@ -10,7 +10,7 @@
                         <input value="<?php echo filter_var( $user->getName(), FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?>" name="name" type="text" class="form-control" id="pseudo" placeholder="Enter pseudo">
                         <?php if($userForm->getError()["name"]) {?>
                             <div class="alert alert-danger" role="alert">
-                                Please enter a pseudo
+                                <?php echo $userForm->getError()["name"] ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -21,7 +21,7 @@
                         <input value="<?php echo filter_var( $user->getEmail()->getEmail(), FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?>" name="email" class="form-control" id="email" placeholder="Enter email">
                         <?php if($userForm->getEmailForm()->getError()["email"]) {?>
                             <div class="alert alert-danger" role="alert">
-                                Please enter an email
+                                <?php echo $userForm->getEmailForm()->getError()["email"] ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -31,7 +31,7 @@
                     <input value="<?php echo filter_var( $user->getPassword()->getValue(), FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?>" name="password" class="form-control" id="password" placeholder="Enter password">
                     <?php if($userForm->getPasswordForm()->getError()["password"]) {?>
                         <div class="alert alert-danger" role="alert">
-                            Please enter a password
+                            <?php echo $userForm->getPasswordForm()->getError()["password"] ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -40,7 +40,7 @@
                     <input name="password_confirmation" class="form-control" id="confirmation" placeholder="Confirm password">
                     <?php if($userForm->getPasswordForm()->getError()["confirm"]) {?>
                         <div class="alert alert-danger" role="alert">
-                            Please confirm your password
+                            <?php echo $userForm->getPasswordForm()->getError()["confirm"] ?>
                         </div>
                     <?php } ?>
                 </div>

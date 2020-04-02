@@ -15,22 +15,26 @@ use App\Entity\User;
 class EmailForm
 {
     private array $error = [
-        "email" => false,
+        "email" => "",
     ];
 
-    public function __construct(Email $email)
+    public function __construct()
     {
+    }
+
+    public function fillEmailEntity(Email $email){
+
         $value = filter_input(INPUT_POST, "email");
         if ($value !== null) {
             $email->setEmail(filter_input(
                 INPUT_POST,
                 "email"
             ));
-        }
-        if("" === $value){
-            $this->error["email"] = true;
-        }
 
+        if("" === $value){
+            $this->error["email"] = "Invalid email adress";
+        }
+        }
     }
 
     /**

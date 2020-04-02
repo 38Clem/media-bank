@@ -1,0 +1,13 @@
+{
+	"name" : "utilisateur/media-bank",
+	"authors" : [{
+			"name" : "Clemence",
+			"email" : "38Clem@users.noreply.github.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"App\\" : "src/"
+		}
+	}
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ZqC88rU1hAJxGxYXe6h5S6KnQA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Utilisateur\Desktop\media-bank\templates\user" />
+      <recent name="C:\Users\Utilisateur\Desktop\media-bank\templates" />
+      <recent name="C:\Users\Utilisateur\Desktop\media-bank\templates\authentification" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="" />
+      <created>1585557074525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585557074525</updated>
+      <workItem from="1585557076163" duration="18849000" />
+      <workItem from="1585638335433" duration="421000" />
+      <workItem from="1585639128309" duration="25307000" />
+      <workItem from="1585723253577" duration="25039000" />
+      <workItem from="1585760870866" duration="4166000" />
+      <workItem from="1585810869144" duration="2585000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1585752355872">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585752355872" />
+    <state x="1687" y="518" key="NewPhpClassDialog" timestamp="1585661026376">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1687" y="518" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585661026376" />
+    <state x="1754" y="627" key="NewPhpFileDialog" timestamp="1585727339003">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1754" y="627" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585727339003" />
+    <state x="1096" y="223" key="SettingsEditor" timestamp="1585733001621">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1096" y="223" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585733001621" />
+    <state x="1707" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585638339221">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1707" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585638339221" />
+    <state x="1607" y="362" key="run.anything.popup" timestamp="1585660968173">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1607" y="362" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585660968173" />
+    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1585752053648">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1628" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585752053648" />
+  </component>
+</project>

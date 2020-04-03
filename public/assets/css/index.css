@@ -7,6 +7,10 @@ h1{
     color: cornflowerblue;
 }
 
-.sign-up{
+.sign-up, .log-in, .search{
     margin-top: 10%;
+}
+
+.log-in-nav{
+    background-image: url("/public/assets/images/log-in.png")
 }

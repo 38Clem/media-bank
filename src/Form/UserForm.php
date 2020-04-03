@@ -40,9 +40,9 @@ class UserForm
         if (null !== $name){
            if(3 > strlen($name) || strlen($name) > 12) {
                 $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
-            }else{
-                return true;
+                return false;
             }
+           return true;
 
         }
 

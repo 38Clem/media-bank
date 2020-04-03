@@ -53,7 +53,7 @@ class PasswordForm
         $confirmation = filter_input(INPUT_POST, "password_confirmation");
         $controlPassword = $this->controlPassword($value);
         $controlConfirm = $this->controlPasswordConfirm($confirmation, $value);
-        if ($controlPassword && $controlConfirm) {
+        if ($controlPassword) {
             $password->setValue($value);
         }
 

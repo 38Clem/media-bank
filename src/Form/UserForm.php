@@ -42,7 +42,8 @@ class UserForm
                 $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
                 return false;
             }
-           return true;
+                return true;
+
 
         }
 

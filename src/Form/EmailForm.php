@@ -25,12 +25,13 @@ class EmailForm
 
     public function controlEmail($value)
     {
-        if(null !== $value){
+        if (null !== $value) {
             if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
                 $this->error["email"] = "Invalid email adress";
-            }else{
-                return true;
+                return false;
             }
+            return true;
+
         }
 
     }
@@ -40,7 +41,7 @@ class EmailForm
         $value = filter_input(INPUT_POST, "email");
         if ($value !== null) {
             $control = $this->controlEmail($value);
-            if($control){
+            if ($control) {
                 $email->setEmail($value);
             }
 

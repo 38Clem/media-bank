@@ -28,22 +28,23 @@ class PasswordForm
         if ($value !== null) {
             if (6 > strlen($value) || strlen($value) > 24) {
                 $this->error["password"] = "Your password must be between 6 and 24 characters ";
-            } else {
-                return true;
+                return false;
             }
+            return true;
+
         }
     }
 
     public function controlPasswordConfirm($confirmation, $value)
     {
-        if(null !== $confirmation)
-        if ($confirmation === "") {
-            $this->error["confirm"] = "Confirmation Password is empty";
-        } elseif ($confirmation !== $value) {
-            $this->error["confirm"] = "Doesn't match with Password";
-        } else {
-            return true;
-        }
+        if (null !== $confirmation)
+            if ($confirmation === "") {
+                $this->error["confirm"] = "Confirmation Password is empty";
+            } elseif ($confirmation !== $value) {
+                $this->error["confirm"] = "Doesn't match with Password";
+            } else {
+                return true;
+            }
     }
 
 

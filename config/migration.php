@@ -1,33 +1,20 @@
 <?php
 
-$str = file_get_contents("./media_bank.sql");
+require __DIR__ . '/../vendor/autoload.php';
 
-$host = "localhost";
-$dbname = "media_bank";
-$port = "3306";
-$charset = "utf8";
+use App\Database\Connection;
 
-$user = "root";
-$password = "";
-
-$dbh = new PDO (
-    "mysql:host=$host;dbname=$dbname;charset=$charset",
-    $user,
-    $password,
-    [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]
-);
-
+$connection = new Connection();
 
 /**
  * Statement Handler
  * @var PDOStatement
  */
 
-$sth = $dbh->prepare($str);
 
 try {
+    $str = file_get_contents(__DIR__ . "/../media_bank.sql");
+    $sth = $connection->getConnection()->prepare($str);
     $sth->execute();
     echo "\033[01;32m success \033[0m";
 } catch (Throwable $e) {

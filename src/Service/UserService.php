@@ -13,17 +13,24 @@ class UserService
     private EmailService $emailService;
     private PasswordService $passwordService;
 
+    /**
+     * @param User $user
+     * @throws Throwable
+     * @throws UserNameExistsException
+     */
+
     public function save(User $user){
         $this->emailService = new EmailService();
         $this->passwordService = new PasswordService();
 
-        $connection = new Connection();
-        $connection->getConnection()->beginTransaction();
+        $connection = Connection::getConnection();
+        $connection->beginTransaction();
         try {
+
             $this->passwordService->save($user->getPassword());
             $this->emailService->save($user->getEmail());
 
-            $sth = $connection->getConnection()->prepare(
+            $sth = $connection->prepare(
                 "INSERT INTO `user`(
                     `name`, `email`, `password`
                     ) VALUES (:name,:email,:password)"
@@ -34,17 +41,14 @@ class UserService
             $sth->bindValue(":password", $user->getPassword()->getId());
             $sth->execute();
 
-            $user->setId($connection->getConnection()->lastInsertId());
+            $user->setId($connection->lastInsertId());
 
-            $connection->getConnection()->commit();
+            $connection->commit();
 
         }catch (Throwable $e){
-            if($e->getCode() === "23000"){
-                $connection->getConnection()->rollBack();
-                throw new UserNameExistsException("Pseudo already exists");
-            }
-            $connection->getConnection()->rollBack();
-            throw $e;
+
+            $connection->rollBack();
+            throw $e->getCode() === "23000" ? new UserNameExistsException("Pseudo already exists") : $e;
         }
 
     }

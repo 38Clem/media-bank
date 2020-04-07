@@ -2,8 +2,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Controller\AuthentificationController;
-use App\Controller\UserController;
 
 $url = "/home";
 $redirecturl =filter_input(
@@ -71,7 +69,7 @@ try {
     $obj->$methodName();
 }
 
-
+var_dump($e);
 /**
  * On veut un système de log
  */

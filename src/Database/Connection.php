@@ -7,12 +7,13 @@ use PDO;
 
 class Connection
 {
-    private PDO $dbh;
+    private static PDO $dbh;
+    private static bool $off = true;
 
-    public function __construct()
+    private function __construct()
     {
 
-        $this->dbh = new PDO("mysql:host=localhost;dbname=media_bank;charset=utf8",
+        Connection::$dbh = new PDO("mysql:host=localhost;dbname=media_bank;charset=utf8",
         "root",
         "",
         [
@@ -20,9 +21,13 @@ class Connection
         ]);
     }
 
-    public function getConnection():PDO
+    public static function getConnection():PDO
     {
-    return $this->dbh;
+        if(Connection::$off){
+           new Connection();
+           Connection::$off = false;
+        }
+    return Connection::$dbh;
     }
 
 }

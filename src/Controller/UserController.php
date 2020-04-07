@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserForm;
+use App\Service\Exception\EmailExistsException;
+use App\Service\Exception\UserNameExistsException;
 use App\Service\UserService;
 use Throwable;
 
@@ -25,11 +27,12 @@ class UserController
                 $userService->save($user);
 
             } catch (Throwable $e) {
-                var_dump($e->getCode());
-                if($e->getCode() === 1){
+                if($e instanceof EmailExistsException){
                     $userForm->getEmailForm()->setError(["email" => "Email already exists"]);
-                }elseif ($e->getCode() === 2){
+                }elseif ($e instanceof UserNameExistsException){
                     $userForm->setError(["name" => "Pseudo already exists"]);
+                }else{
+                    throw $e;
                 }
 
             }

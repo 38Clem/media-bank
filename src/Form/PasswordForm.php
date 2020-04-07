@@ -14,8 +14,8 @@ use App\Entity\Password;
 class PasswordForm
 {
     private array $error = [
-        "password" => "",
-        "confirm" => "",
+        "password" => false,
+        "confirm" => false,
     ];
 
     public function __construct()
@@ -23,42 +23,60 @@ class PasswordForm
 
     }
 
-    public function controlPassword($value)
+    public function isSubmitted(): bool
     {
-        if ($value !== null) {
-            if (6 > strlen($value) || strlen($value) > 24) {
-                $this->error["password"] = "Your password must be between 6 and 24 characters ";
-                return false;
-            }
-            return true;
+        return filter_input(INPUT_POST, "password") !== null;
+    }
 
+
+    public function isValidPassword(): bool
+    {
+        if (!$this->isSubmitted()) {
+            return false;
         }
+        $value = filter_input(INPUT_POST, "password");
+        if (6 > strlen($value) || strlen($value) > 24) {
+            $this->error["password"] = "Your password must be between 6 and 24 characters ";
+            return false;
+        }
+        return true;
     }
 
-    public function controlPasswordConfirm($confirmation, $value)
-    {
-        if (null !== $confirmation)
-            if ($confirmation === "") {
-                $this->error["confirm"] = "Confirmation Password is empty";
-            } elseif ($confirmation !== $value) {
-                $this->error["confirm"] = "Doesn't match with Password";
-            } else {
-                return true;
-            }
-    }
-
-
-    public function fillPasswordForm(Password $password)
+    public function isValidConfirmation(): bool
     {
         $value = filter_input(INPUT_POST, "password");
         $confirmation = filter_input(INPUT_POST, "password_confirmation");
-        $controlPassword = $this->controlPassword($value);
-        $controlConfirm = $this->controlPasswordConfirm($confirmation, $value);
-        if ($controlPassword) {
-            $password->setValue($value);
+        if (!$this->isSubmitted()) {
+            return false;
+        }
+        if ($confirmation === "") {
+            $this->error["confirm"] = "Confirmation Password is empty";
+            return false;
+        } elseif ($confirmation !== $value) {
+            $this->error["confirm"] = "Doesn't match with Password";
+            return false;
+        }
+        return true;
+
+    }
+
+
+    public function fillEntity(Password $password)
+    {
+        if ($this->isSubmitted()) {
+            $password->setValue(filter_input(INPUT_POST, "password"));
         }
 
     }
+
+    /**
+     * @param array $error
+     */
+    public function setError(array $error): void
+    {
+        $this->error = $error;
+    }
+
 
     /**
      * @return array

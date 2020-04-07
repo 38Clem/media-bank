@@ -5,7 +5,6 @@ namespace App\Form;
 
 
 use App\Entity\Email;
-use App\Entity\User;
 
 /**
  * Class EmailForm
@@ -15,38 +14,51 @@ use App\Entity\User;
 class EmailForm
 {
     private array $error = [
-        "email" => "",
+        "email" => false,
     ];
 
     public function __construct()
     {
     }
 
-
-    public function controlEmail($value)
+    public function isSubmitted(): bool
     {
-        if (null !== $value) {
-            if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
-                $this->error["email"] = "Invalid email adress";
-                return false;
-            }
-            return true;
-
-        }
-
+        return filter_input(INPUT_POST, "email") !== null;
     }
 
-    public function fillEmailEntity(Email $email)
+    public function isValid(): bool
     {
+        if (!$this->isSubmitted()) {
+            return false;
+        }
         $value = filter_input(INPUT_POST, "email");
-        if ($value !== null) {
-            $control = $this->controlEmail($value);
-            if ($control) {
-                $email->setEmail($value);
-            }
 
+        if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
+            $this->error["email"] = "Invalid email adress";
+            return false;
+        }
+        return true;
+
+
+    }
+
+    public function fillEntity(Email $email)
+    {
+        if ($this->isSubmitted()) {
+            $email->setEmail(filter_input(INPUT_POST, "email"));
+            $this->isValid();
         }
     }
+
+    /**
+     * @param array $error
+     */
+    public function setError(array $error): void
+    {
+        $this->error = $error;
+    }
+
+
 
     /**
      * @return array

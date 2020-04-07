@@ -4,10 +4,15 @@
     <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_bank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/media_bank.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/EmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmailForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/PasswordForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_header.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_header.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentification/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentification/login.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +34,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZqC88rU1hAJxGxYXe6h5S6KnQA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -46,7 +53,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -72,7 +79,9 @@
       <workItem from="1585760870866" duration="4166000" />
       <workItem from="1585810869144" duration="28369000" />
       <workItem from="1585892895035" duration="22532000" />
-      <workItem from="1585924990693" duration="2137000" />
+      <workItem from="1585924990693" duration="9053000" />
+      <workItem from="1586155650118" duration="25145000" />
+      <workItem from="1586242766660" duration="13795000" />
     </task>
     <servers />
   </component>
@@ -80,26 +89,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1585752355872">
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1586246241651">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585752355872" />
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586246241651" />
     <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585814221234">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585814221234" />
-    <state x="1613" y="227" key="NewPhpClassDialog" timestamp="1585922575255">
+    <state x="1613" y="227" key="NewPhpClassDialog" timestamp="1586253249297">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1613" y="227" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585922575255" />
+    <state x="1613" y="227" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586253249297" />
     <state x="1754" y="627" key="NewPhpFileDialog" timestamp="1585727339003">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1754" y="627" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585727339003" />
-    <state x="1096" y="223" key="SettingsEditor" timestamp="1585816322359">
+    <state x="1096" y="223" key="SettingsEditor" timestamp="1586168863018">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1096" y="223" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585816322359" />
+    <state x="1096" y="223" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586168863018" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1585896312068">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -4,17 +4,18 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Database\Connection;
 
-$connection = new Connection();
+
 
 /**
  * Statement Handler
  * @var PDOStatement
  */
 
+$connection = new Connection();
 
 try {
-    $str = file_get_contents(__DIR__ . "/../media_bank.sql");
-    $sth = $connection->getConnection()->prepare($str);
+    $sth = $connection->getConnection()->prepare(file_get_contents(
+        __DIR__ . "/../media_bank.sql"));
     $sth->execute();
     echo "\033[01;32m success \033[0m";
 } catch (Throwable $e) {

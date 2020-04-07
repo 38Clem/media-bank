@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 03 avr. 2020 à 13:01
+-- Généré le : lun. 06 avr. 2020 à 14:44
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -42,7 +42,7 @@ CREATE TABLE `email` (
 CREATE TABLE `password` (
   `id` int(10) NOT NULL,
   `value` char(128) NOT NULL,
-  `password_token` int(10) NOT NULL
+  `password_token` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -113,13 +113,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `password`
 --
 ALTER TABLE `password`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `password_token`
@@ -131,7 +131,7 @@ ALTER TABLE `password_token`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
@@ -147,8 +147,8 @@ ALTER TABLE `password`
 -- Contraintes pour la table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`password`) REFERENCES `password` (`id`),
-  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`email`) REFERENCES `email` (`id`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`email`) REFERENCES `email` (`id`),
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`password`) REFERENCES `password` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

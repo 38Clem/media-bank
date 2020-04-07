@@ -19,44 +19,49 @@ class UserForm
     private EmailForm $emailForm;
     private PasswordForm $passwordForm;
     private array $error = [
-        "name" => "",
+        "name" => false,
     ];
 
-    public function __construct()
+    public function __construct(User $user)
     {
-    }
-
-
-    public function buildForm(User $user)
-    {
-
         $this->emailForm = new EmailForm($user->getEmail());
         $this->passwordForm = new PasswordForm($user->getPassword());
-
     }
 
-    public function controlUser($name)
+    public function isSubmitted(): bool
     {
-        if (null !== $name){
-           if(3 > strlen($name) || strlen($name) > 12) {
-                $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
-                return false;
-            }
-                return true;
+        return filter_input(INPUT_POST, "name") !== null;
+    }
 
-
+    public function isValid(): bool
+    {
+        if (!$this->isSubmitted()) {
+            return false;
         }
+        $emailValid = $this->getEmailForm()->isValid();
+        $passwordValid = $this->getPasswordForm()->isValidPassword();
+        $confirmPasswordValid = $this->getPasswordForm()->isValidConfirmation();
+        $name = filter_input(INPUT_POST, "name");
+        if (3 > strlen($name) || strlen($name) > 12) {
+            $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
+            return false;
+        }
+        if ($this->error["name"] || !$emailValid || !$passwordValid || !$confirmPasswordValid) {
+            return false;
+        }
+        return true;
+
 
     }
 
-    public function fillUser(User $user){
+    public function fillEntity(User $user)
+    {
         $name = filter_input(INPUT_POST, "name");
-        $control = $this->controlUser($name);
-        if($control){
+        if ($this->isSubmitted()) {
             $user->setName($name);
         }
-        $this->emailForm->fillEmailEntity($user->getEmail());
-        $this->passwordForm->fillPasswordForm($user->getPassword());
+        $this->emailForm->fillEntity($user->getEmail());
+        $this->passwordForm->fillEntity($user->getPassword());
     }
 
     /**
@@ -66,6 +71,16 @@ class UserForm
     {
         return $this->error;
     }
+
+    /**
+     * @param array $error
+     */
+    public function setError(array $error): void
+    {
+        $this->error = $error;
+    }
+
+
 
     /**
      * @return EmailForm

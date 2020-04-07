@@ -1,6 +1,6 @@
 <?php
-namespace App\Controller;
 
+namespace App\Controller;
 
 
 use App\Entity\Email;
@@ -13,13 +13,11 @@ class AuthentificationController
 
     public function logIn()
     {
-        $email = filter_input(INPUT_POST, "email");
         $emailForm = new EmailForm();
-        $emailForm->controlEmail($email);
+        $emailForm->isValid();
 
-        $password = filter_input(INPUT_POST, "password");
         $passwordForm = new PasswordForm();
-        $passwordForm->controlPassword($password);
+        $passwordForm->isValidPassword();
 
         include __DIR__ . "/../../templates/authentification/login.html.php";
     }

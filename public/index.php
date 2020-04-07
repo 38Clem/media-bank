@@ -71,6 +71,7 @@ try {
     $obj->$methodName();
 }
 
+
 /**
  * On veut un système de log
  */

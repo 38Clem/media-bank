@@ -16,19 +16,35 @@
     </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ">
-            <li class="nav-item border">
+            <li class="nav-item">
                 <a class="nav-link" href="/login">
-                    <h2>Log In</h2>
+                    <img class="img-fluid" src="/assets/images/log-in.png" style="height: 5vh; width: 10vw;"/>
                 </a>
             </li>
-            <li class="nav-item border">
+            <li class="nav-item ">
                 <a class="nav-link" href="/signup">
-                    <h2>Sign Up</h2>
+                    <img class="img-fluid" src="/assets/images/sign-up.png" style="height: 5vh; width: 10vw;"/>
                 </a>
             </li>
-            <li class="nav-item border">
+            <li class="nav-item">
                 <a class="nav-link" href="/search">
-                    <h2>Search</h2>
+                    <img class="img-fluid" src="/assets/images/search.png" style="height: 5vh; width: 10vw;"/>
+                </a>
+            </li>
+<!--           navBar collapse-->
+            <li>
+                <a class="nav-link" href="/login">
+                <h2 class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent">Log In</h2>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="/signup">
+                <h2 class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent">Sign Up</h2>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="/search">
+                <h2 class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent">Search</h2>
                 </a>
             </li>
         </ul>

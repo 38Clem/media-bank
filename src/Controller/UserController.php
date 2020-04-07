@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Email;
 use App\Entity\User;
-use App\Form\EmailForm;
 use App\Form\UserForm;
+use App\Service\UserService;
+use Throwable;
 
 class UserController
 {
@@ -13,10 +13,27 @@ class UserController
     public function createUser()
     {
         $user = new User();
-        $userForm = new UserForm();
-        $userForm->buildForm($user);
-        $userForm->fillUser($user);
+        $userForm = new UserForm($user);
+        $userForm->fillEntity($user);
 
+        if ($userForm->isValid()) {
+
+            $userService = new UserService();
+
+            try {
+
+                $userService->save($user);
+
+            } catch (Throwable $e) {
+                var_dump($e->getCode());
+                if($e->getCode() === 1){
+                    $userForm->getEmailForm()->setError(["email" => "Email already exists"]);
+                }elseif ($e->getCode() === 2){
+                    $userForm->setError(["name" => "Pseudo already exists"]);
+                }
+
+            }
+        }
         include __DIR__ . "/../../templates/user/signup.html.php";
     }
 

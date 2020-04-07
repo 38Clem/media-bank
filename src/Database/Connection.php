@@ -19,13 +19,14 @@ class Connection
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]);
+
+        Connection::$off = !Connection::$off;
     }
 
     public static function getConnection():PDO
     {
         if(Connection::$off){
            new Connection();
-           Connection::$off = false;
         }
     return Connection::$dbh;
     }

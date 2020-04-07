@@ -11,10 +11,10 @@ use App\Database\Connection;
  * @var PDOStatement
  */
 
-$connection = new Connection();
+$connection = Connection::getConnection();
 
 try {
-    $sth = $connection->getConnection()->prepare(file_get_contents(
+    $sth = $connection->prepare(file_get_contents(
         __DIR__ . "/../media_bank.sql"));
     $sth->execute();
     echo "\033[01;32m success \033[0m";

@@ -17,32 +17,7 @@ if ($redirecturl) {
     $url = $pathinfo;
 }
 
-$routes = [
-    "/home" => [
-        "controller" => "App\Controller\HomeController",
-        "method" => "home"
-    ],
-    "/login" => [
-        "controller" => "App\Controller\AuthentificationController",
-        "method" => "login"
-    ],
-    "/signup" => [
-        "controller" => "App\Controller\UserController",
-        "method" => "createUser"
-    ],
-    "/search" => [
-        "controller" => "App\Controller\SearchController",
-        "method" => "search"
-    ],
-    "/404" => [
-        "controller" => "App\Controller\ErrorController",
-        "method" => "error404"
-    ],
-    "/500" => [
-        "controller" => "App\Controller\ErrorController",
-        "method" => "error500"
-    ],
-];
+
 
 
 $obj = null;

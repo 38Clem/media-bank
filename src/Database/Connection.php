@@ -4,31 +4,40 @@
 namespace App\Database;
 
 use PDO;
+use stdClass;
 
 class Connection
 {
     private static PDO $dbh;
     private static bool $off = true;
+    private stdClass $database;
 
     private function __construct()
     {
 
-        Connection::$dbh = new PDO("mysql:host=localhost;dbname=media_bank;charset=utf8",
-        "root",
-        "",
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]);
+        $this->database = json_decode(file_get_contents(__DIR__ . "/../../config/database.json"));
+
+        Connection::$dbh = new PDO(
+            $this->database->driver.":"
+            ."dbname=".$this->database->dbname.";"
+            ."host=".$this->database->host.";"
+            ."port=".$this->database->port.";"
+            ."charset=".$this->database->charset,
+            $this->database->user,
+            $this->database->password,
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]);
 
         Connection::$off = !Connection::$off;
     }
 
-    public static function getConnection():PDO
+    public static function getConnection(): PDO
     {
-        if(Connection::$off){
-           new Connection();
+        if (Connection::$off) {
+            new Connection();
         }
-    return Connection::$dbh;
+        return Connection::$dbh;
     }
 
 }

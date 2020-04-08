@@ -2,50 +2,56 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-
-$url = "/home";
-$redirecturl =filter_input(
+/**
+ *
+ */
+$url = filter_input(
     INPUT_SERVER,
-    "REDIRECT_URI");
-$pathinfo =filter_input(
-    INPUT_SERVER,
-    "PATH_INFO");
+    "REDIRECT_URI") ?
+    filter_input(
+        INPUT_SERVER,
+        "REDIRECT_URI") :
+    filter_input(
+        INPUT_SERVER,
+        "PATH_INFO");
 
-if ($redirecturl) {
-    $url = redirecturl;
-} elseif ($pathinfo) {
-    $url = $pathinfo;
+/**
+ *
+ */
+$routes = json_decode(file_get_contents(__DIR__ . "/../config/route.json"));
+
+
+if ($routes === null) {
+    die("invalid route" . json_last_error_msg());
 }
 
-
-
-
-$obj = null;
 
 try {
-    foreach ($routes as $key => $value) {
 
-        if ($url === $key) {
-            $obj = new $value["controller"];
-            $methodName = $value["method"];
-            $obj->$methodName();
-        }
-    }
+    if (!property_exists($routes, $url)) {
+        $url = "/404";
+    };
 
-    if (!$obj) {
-        $obj = new $routes["/404"]["controller"];
-        $methodName = $routes["/404"]["method"];
-        $obj->$methodName();
-    }
+    (new $routes->$url->controller)->{$routes->$url->method}();
 
 } catch (Throwable $e) {
-    $obj = new $routes["/500"]["controller"];
-    $methodName = $routes["/500"]["method"];
-    $obj->$methodName();
+
+
+    $filePath = __DIR__ . "/../var/log/" . date("Y-m-d") . ".error.log";
+
+
+    file_put_contents(
+        $filePath,
+        (file_exists($filePath) ? file_get_contents($filePath):  "") . date("H\h i\m s\s:")
+        . " "
+        . $e->getMessage()
+        . " "
+        . $e->getFile()
+        . ": "
+        . $e->getLine()
+        . "."
+        . "\n"
+    );
+
+    (new $routes->{"/500"}->controller)->{$routes->{"/500"}->method}();
 }
-
-var_dump($e);
-/**
- * On veut un système de log
- */
-

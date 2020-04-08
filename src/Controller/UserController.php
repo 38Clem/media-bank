@@ -25,7 +25,6 @@ class UserController
             try {
 
                 $userService->save($user);
-
             } catch (Throwable $e) {
                 if($e instanceof EmailExistsException){
                     $userForm->getEmailForm()->setError(["email" => "Email already exists"]);

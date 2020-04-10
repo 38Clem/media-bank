@@ -5,13 +5,14 @@ require __DIR__ . '/../vendor/autoload.php';
 /**
  *
  */
+
 $url = filter_input(
     INPUT_SERVER,
-    "REDIRECT_URI") ?
-    filter_input(
+    "REDIRECT_URI")
+    ? filter_input(
         INPUT_SERVER,
-        "REDIRECT_URI") :
-    filter_input(
+        "REDIRECT_URI")
+    : filter_input(
         INPUT_SERVER,
         "PATH_INFO");
 
@@ -36,9 +37,7 @@ try {
 
 } catch (Throwable $e) {
 
-
     $filePath = __DIR__ . "/../var/log/" . date("Y-m-d") . ".error.log";
-
 
     file_put_contents(
         $filePath,

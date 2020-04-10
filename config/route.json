@@ -1,5 +1,5 @@
 {
-  "/home": {
+  "": {
     "controller":"App\\Controller\\HomeController",
     "method":"home"
   },

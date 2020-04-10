@@ -11,15 +11,14 @@ use App\Entity\Password;
  * @package App\Form
  * Responsable de renseigner les attributs de type primitif de Password Entity
  */
-class PasswordForm
+class PasswordForm extends Form implements FormInterface
 {
-    private array $error = [
-        "password" => false,
-        "confirm" => false,
-    ];
 
     public function __construct()
     {
+        parent::__construct();
+        $this->error["password"] = null;
+        $this->error["confirm"] = null;
 
     }
 
@@ -29,36 +28,29 @@ class PasswordForm
     }
 
 
-    public function isValidPassword(): bool
+    public function isValid(): bool
     {
         if (!$this->isSubmitted()) {
             return false;
         }
-        $value = filter_input(INPUT_POST, "password");
-        if (6 > strlen($value) || strlen($value) > 24) {
-            $this->error["password"] = "Your password must be between 6 and 24 characters ";
-            return false;
-        }
-        return true;
-    }
-
-    public function isValidConfirmation(): bool
-    {
         $value = filter_input(INPUT_POST, "password");
         $confirmation = filter_input(INPUT_POST, "password_confirmation");
-        if (!$this->isSubmitted()) {
+        if (6 > strlen($value) || strlen($value) > 24) {
+            $this->error["password"] = FormInterface::ERROR_PASSWORD;
             return false;
         }
-        if ($confirmation === "") {
-            $this->error["confirm"] = "Confirmation Password is empty";
-            return false;
-        } elseif ($confirmation !== $value) {
-            $this->error["confirm"] = "Doesn't match with Password";
-            return false;
+        if($confirmation){
+            if ($confirmation === "") {
+                $this->error["confirm"] = FormInterface::ERROR_BLANK;
+                return false;
+            } elseif ($confirmation !== $value) {
+                $this->error["confirm"] = FormInterface::ERROR_CONFIRM_PASSWORD;
+                return false;
+            }
         }
         return true;
-
     }
+
 
 
     public function fillEntity(Password $password)
@@ -67,23 +59,6 @@ class PasswordForm
             $password->setValue(filter_input(INPUT_POST, "password"));
         }
 
-    }
-
-    /**
-     * @param array $error
-     */
-    public function setError(array $error): void
-    {
-        $this->error = $error;
-    }
-
-
-    /**
-     * @return array
-     */
-    public function getError(): array
-    {
-        return $this->error;
     }
 
 }

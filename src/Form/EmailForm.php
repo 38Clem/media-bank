@@ -11,14 +11,14 @@ use App\Entity\Email;
  * @package App\Form
  * Responsable de renseigner les attributs de type primitif de Email Entity
  */
-class EmailForm
+class EmailForm extends Form implements FormInterface
 {
-    private array $error = [
-        "email" => false,
-    ];
+
 
     public function __construct()
     {
+        parent::__construct();
+        $this->error["email"] = null;
     }
 
     public function isSubmitted(): bool
@@ -34,7 +34,7 @@ class EmailForm
         $value = filter_input(INPUT_POST, "email");
 
         if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
-            $this->error["email"] = "Invalid email adress";
+            $this->error["email"] = FormInterface::ERROR_EMAIL;
             return false;
         }
         return true;
@@ -50,22 +50,6 @@ class EmailForm
         }
     }
 
-    /**
-     * @param array $error
-     */
-    public function setError(array $error): void
-    {
-        $this->error = $error;
-    }
 
-
-
-    /**
-     * @return array
-     */
-    public function getError(): array
-    {
-        return $this->error;
-    }
 
 }

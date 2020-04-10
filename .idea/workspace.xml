@@ -3,9 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf8cf89-150a-44b5-aac1-aafda03c3f06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/route.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/route.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/background-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthentificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmailForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PasswordForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/EmailService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EmailService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_header.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_header.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentification/login.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentification/login.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/log/2020-04-08.error.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/2020-04-08.error.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +86,8 @@
       <workItem from="1585924990693" duration="9053000" />
       <workItem from="1586155650118" duration="25145000" />
       <workItem from="1586242766660" duration="22469000" />
-      <workItem from="1586328077278" duration="14553000" />
+      <workItem from="1586328077278" duration="24464000" />
+      <workItem from="1586413539909" duration="18965000" />
     </task>
     <servers />
   </component>
@@ -87,18 +99,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1032" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586343598038" />
-    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1586246241651">
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser" timestamp="1586352686769">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586246241651" />
+    <state x="1713" y="419" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586352686769" />
     <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585814221234">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1527" y="458" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585814221234" />
-    <state x="1613" y="227" key="NewPhpClassDialog" timestamp="1586253249297">
+    <state x="1613" y="227" key="NewPhpClassDialog" timestamp="1586434179168">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1613" y="227" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586253249297" />
+    <state x="1613" y="227" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586434179168" />
     <state x="1754" y="627" key="NewPhpFileDialog" timestamp="1585727339003">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

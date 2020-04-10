@@ -4,28 +4,26 @@
 namespace App\Form;
 
 
-use App\Entity\Email;
-use App\Entity\Password;
 use App\Entity\User;
 
 /**
  * Class UserForm
  * @package App\Form
- * Responsable de renqeigner les attributs de type primitif de User Entity
+ * Responsable de renseigner les attributs de type primitif de User Entity
  * Il doit instancier EmailFrom et PasswordForm et leur donner l'entity concernée
  */
-class UserForm
+class UserForm extends Form implements FormInterface
 {
     private EmailForm $emailForm;
     private PasswordForm $passwordForm;
-    private array $error = [
-        "name" => false,
-    ];
 
-    public function __construct(User $user)
+
+    public function __construct()
     {
-        $this->emailForm = new EmailForm($user->getEmail());
-        $this->passwordForm = new PasswordForm($user->getPassword());
+        parent::__construct();
+        $this->error["name"] = false;
+        $this->emailForm = new EmailForm();
+        $this->passwordForm = new PasswordForm();
     }
 
     public function isSubmitted(): bool
@@ -39,14 +37,13 @@ class UserForm
             return false;
         }
         $emailValid = $this->getEmailForm()->isValid();
-        $passwordValid = $this->getPasswordForm()->isValidPassword();
-        $confirmPasswordValid = $this->getPasswordForm()->isValidConfirmation();
+        $passwordValid = $this->getPasswordForm()->isValid();
         $name = filter_input(INPUT_POST, "name");
         if (3 > strlen($name) || strlen($name) > 12) {
-            $this->error["name"] = "Your pseudo must be between 3 and 12 characters";
+            $this->error["name"] = FormInterface::ERROR_FORMAT_NAME;
             return false;
         }
-        if ($this->error["name"] || !$emailValid || !$passwordValid || !$confirmPasswordValid) {
+        if ($this->error["name"] || !$emailValid || !$passwordValid) {
             return false;
         }
         return true;
@@ -62,22 +59,6 @@ class UserForm
         }
         $this->emailForm->fillEntity($user->getEmail());
         $this->passwordForm->fillEntity($user->getPassword());
-    }
-
-    /**
-     * @return array
-     */
-    public function getError(): array
-    {
-        return $this->error;
-    }
-
-    /**
-     * @param array $error
-     */
-    public function setError(array $error): void
-    {
-        $this->error = $error;
     }
 
 

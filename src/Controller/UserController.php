@@ -12,6 +12,8 @@ use Throwable;
 class UserController
 {
 
+    public function __construct(){}
+
     public function createUser()
     {
         $user = new User();
@@ -23,13 +25,12 @@ class UserController
             $userService = new UserService();
 
             try {
-
                 $userService->save($user);
             } catch (Throwable $e) {
                 if($e instanceof EmailExistsException){
-                    $userForm->getEmailForm()->setError(["email" => "Email already exists"]);
+                    $userForm->getEmailForm()->setError(["email" => $e->getMessage()]);
                 }elseif ($e instanceof UserNameExistsException){
-                    $userForm->setError(["name" => "Pseudo already exists"]);
+                    $userForm->setError(["name" => $e->getMessage()]);
                 }else{
                     throw $e;
                 }

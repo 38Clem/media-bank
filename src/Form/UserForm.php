@@ -37,7 +37,7 @@ class UserForm extends Form implements FormInterface
             return false;
         }
         $emailValid = $this->getEmailForm()->isValid();
-        $passwordValid = $this->getPasswordForm()->isValid();
+        $passwordValid = $this->getPasswordForm()->isValid(true);
         $name = filter_input(INPUT_POST, "name");
         if (3 > strlen($name) || strlen($name) > 12) {
             $this->error["name"] = FormInterface::ERROR_FORMAT_NAME;

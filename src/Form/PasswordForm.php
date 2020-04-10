@@ -28,7 +28,7 @@ class PasswordForm extends Form implements FormInterface
     }
 
 
-    public function isValid(): bool
+    public function isValid($confirm = false): bool
     {
         if (!$this->isSubmitted()) {
             return false;
@@ -39,7 +39,7 @@ class PasswordForm extends Form implements FormInterface
             $this->error["password"] = FormInterface::ERROR_PASSWORD;
             return false;
         }
-        if($confirmation){
+        if($confirm){
             if ($confirmation === "") {
                 $this->error["confirm"] = FormInterface::ERROR_BLANK;
                 return false;

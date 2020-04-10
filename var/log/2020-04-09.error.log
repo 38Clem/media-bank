@@ -1,0 +1,17 @@
+09h 26m 50s: SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+ C:\Users\Utilisateur\Desktop\media-bank\src\Database\Connection.php: 29.
+09h 47m 38s: Call to undefined method App\Form\PasswordForm::isValidPassword() C:\Users\Utilisateur\Desktop\media-bank\src\Controller\AuthentificationController.php: 20.
+09h 47m 39s: Call to undefined method App\Form\PasswordForm::isValidPassword() C:\Users\Utilisateur\Desktop\media-bank\src\Controller\AuthentificationController.php: 20.
+09h 48m 19s: Typed property App\Form\EmailForm::$email must not be accessed before initialization C:\Users\Utilisateur\Desktop\media-bank\src\Form\EmailForm.php: 50.
+09h 49m 11s: Typed property App\Form\PasswordForm::$password must not be accessed before initialization C:\Users\Utilisateur\Desktop\media-bank\src\Form\PasswordForm.php: 62.
+10h 03m 41s: Call to a member function getEmail() on null C:\Users\Utilisateur\Desktop\media-bank\templates\authentification\login.html.php: 11.
+10h 09m 08s: Call to undefined method App\Entity\Password::getEmail() C:\Users\Utilisateur\Desktop\media-bank\templates\authentification\login.html.php: 20.
+10h 26m 33s: Call to a member function getEmail() on null C:\Users\Utilisateur\Desktop\media-bank\src\Controller\AuthentificationController.php: 33.
+10h 29m 40s: Call to a member function setEmail() on null C:\Users\Utilisateur\Desktop\media-bank\src\Form\EmailForm.php: 49.
+11h 14m 32s: Too few arguments to function App\Form\EmailForm::fillEntity(), 0 passed in C:\Users\Utilisateur\Desktop\media-bank\src\Form\UserForm.php on line 61 and exactly 1 expected C:\Users\Utilisateur\Desktop\media-bank\src\Form\EmailForm.php: 45.
+11h 15m 40s: Too few arguments to function App\Form\EmailForm::fillEntity(), 0 passed in C:\Users\Utilisateur\Desktop\media-bank\src\Form\UserForm.php on line 60 and exactly 1 expected C:\Users\Utilisateur\Desktop\media-bank\src\Form\EmailForm.php: 45.
+11h 15m 41s: Too few arguments to function App\Form\EmailForm::fillEntity(), 0 passed in C:\Users\Utilisateur\Desktop\media-bank\src\Form\UserForm.php on line 60 and exactly 1 expected C:\Users\Utilisateur\Desktop\media-bank\src\Form\EmailForm.php: 45.
+11h 16m 30s: Call to a member function setName() on null C:\Users\Utilisateur\Desktop\media-bank\src\Form\UserForm.php: 58.
+14h 54m 46s: Object of class App\Entity\Email could not be converted to string C:\Users\Utilisateur\Desktop\media-bank\src\Service\AuthentificationService.php: 28.
+14h 56m 11s: Class 'App\Service\PDO' not found C:\Users\Utilisateur\Desktop\media-bank\src\Service\AuthentificationService.php: 32.
+14h 57m 17s: syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' C:\Users\Utilisateur\Desktop\media-bank\src\Service\AuthentificationService.php: 14.

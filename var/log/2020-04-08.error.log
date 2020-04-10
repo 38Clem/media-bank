@@ -1,2 +1,6 @@
 13h 00m 56s: SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
  C:\Users\Utilisateur\Desktop\media-bank\src\Database\Connection.php: 29.
+15h 39m 19s: Call to protected method App\Form\Form::getError() from context 'App\Controller\AuthentificationController' C:\Users\Utilisateur\Desktop\media-bank\templates\authentification\login.html.php: 12.
+15h 40m 07s: Call to protected method App\Form\Form::getError() from context 'App\Controller\UserController' C:\Users\Utilisateur\Desktop\media-bank\templates\user\signup.html.php: 11.
+15h 49m 10s: Call to protected method App\Form\Form::getError() from context 'App\Controller\UserController' C:\Users\Utilisateur\Desktop\media-bank\templates\user\signup.html.php: 11.
+15h 50m 31s: Call to protected method App\Form\Form::getError() from context 'App\Controller\UserController' C:\Users\Utilisateur\Desktop\media-bank\templates\user\signup.html.php: 11.

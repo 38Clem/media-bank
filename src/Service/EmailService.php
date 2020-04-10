@@ -29,7 +29,7 @@ class EmailService
 
         }catch (\PDOException $e){
 
-            throw $e->getCode() === "23000" ? new EmailExistsException("Email already exist") : $e;
+            throw $e->getCode() === "23000" ? new EmailExistsException(ServiceInterface::ERROR_ALREADY_EXIST) : $e;
 
         }
     }

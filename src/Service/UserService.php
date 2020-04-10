@@ -48,7 +48,7 @@ class UserService
         }catch (Throwable $e){
 
             $connection->rollBack();
-            throw $e->getCode() === "23000" ? new UserNameExistsException("Pseudo already exists") : $e;
+            throw $e->getCode() === "23000" ? new UserNameExistsException(ServiceInterface::ERROR_ALREADY_EXIST) : $e;
         }
 
     }

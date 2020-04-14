@@ -16,6 +16,7 @@ class UserController
 
     public function createUser()
     {
+        session_start();
         $user = new User();
         $userForm = new UserForm($user);
         $userForm->fillEntity($user);
@@ -26,6 +27,8 @@ class UserController
 
             try {
                 $userService->save($user);
+                header("Location: /");
+                exit;
             } catch (Throwable $e) {
                 if($e instanceof EmailExistsException){
                     $userForm->getEmailForm()->setError(["email" => $e->getMessage()]);
@@ -34,15 +37,16 @@ class UserController
                 }else{
                     throw $e;
                 }
-
             }
         }
+
         include __DIR__ . "/../../templates/user/signup.html.php";
     }
 
     public function updateUser()
     {
-        echo 'Update User';
+        session_start();
+        include __DIR__ . "/../../templates/user/profile.html.php";
     }
 
     public function suspendUser()

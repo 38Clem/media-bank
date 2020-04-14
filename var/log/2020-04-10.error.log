@@ -1,0 +1,3 @@
+10h 14m 43s: Too few arguments to function App\Form\Form::setError(), 0 passed in C:\Users\Utilisateur\Desktop\media-bank\src\Controller\AuthentificationController.php on line 37 and exactly 1 expected C:\Users\Utilisateur\Desktop\media-bank\src\Form\Form.php: 30.
+11h 58m 44s: Return value of App\Service\AuthentificationService::getUser() must be an instance of App\Entity\User, none returned C:\Users\Utilisateur\Desktop\media-bank\src\Service\AuthentificationService.php: 48.
+12h 46m 18s: Return value of App\Service\AuthentificationService::getUser() must be an instance of App\Entity\User, none returned C:\Users\Utilisateur\Desktop\media-bank\src\Service\AuthentificationService.php: 50.

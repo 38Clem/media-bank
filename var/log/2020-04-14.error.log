@@ -1,0 +1,7 @@
+09h 20m 43s: SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+ C:\Users\Utilisateur\Desktop\media-bank\src\Database\Connection.php: 29.
+10h 12m 24s: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' C:\Users\Utilisateur\Desktop\media-bank\templates\_header.html.php: 31.
+10h 15m 12s: Object of class App\Entity\User could not be converted to string C:\Users\Utilisateur\Desktop\media-bank\templates\_header.html.php: 32.
+10h 20m 59s: Object of class App\Entity\User could not be converted to string C:\Users\Utilisateur\Desktop\media-bank\templates\_header.html.php: 32.
+10h 21m 14s: Object of class App\Entity\User could not be converted to string C:\Users\Utilisateur\Desktop\media-bank\templates\_header.html.php: 32.
+10h 31m 26s: Call to a member function getName() on null C:\Users\Utilisateur\Desktop\media-bank\templates\user\profile.html.php: 6.

@@ -1,45 +1,58 @@
 <?php
 
-
 namespace App\Service;
-
 
 use App\Database\Connection;
 use App\Entity\Email;
 use App\Entity\Password;
-use PDOException;
-use PDO;
-
+use App\Entity\User;
+use App\Service\Exception\AuthentificationException;
 
 class AuthentificationService
 {
 
-    public function __construct(){}
+    private User $user;
 
-    public function getUser(Email $email, Password $password)
+    public function __construct()
     {
-        $connection = Connection::getConnection();
-
-        try {
-            $sth = $connection->prepare('SELECT * FROM user 
-            INNER JOIN email ON user.email = email.id
-            INNER JOIN password ON user.password = password.id 
-            WHERE email.value = :email
-');
-            $sth->bindValue(':email', $email->getEmail());
-            $sth->execute();
-            $result = $sth->fetch(PDO::FETCH_ASSOC);
-            var_dump($result);
-
-        } catch (PDOException $e) {
-            var_dump($e);
-        };
-
+        $this->user = new User();
     }
 
-    public function checkCredentials()
+    public function getUser(Email $email, Password $password): User
     {
+        if (!$this->user->getName() || $this->user->getEmail()->getEmail() !== $email->getEmail()) {
+            $this->user->setEmail($email);
+            $this->user->setPassword($password);
+            if (!$this->checkCredentials()) {
+                throw new AuthentificationException();
+            }
+        }
+        return $this->user;
     }
 
+    public function checkCredentials(): bool
+    {
+        $result = $this->findUserByEmail($this->user->getEmail()->getEmail());
+        if (!$result || !password_verify($this->user->getPassword()->getValue(), $result["value"])) {
+            return false;
+        }
+        $this->user->setId($result["id"]);
+        $this->user->setName($result["name"]);
+        $this->user->getPassword()->setValue($result["value"]);
+        return true;
+    }
+
+    public function findUserByEmail(string $email)
+    {
+        $sth = Connection::getConnection()->prepare(
+            "SELECT `user`.`id`,`user`.`name`,`password`.`value` FROM `user` "
+            . "JOIN `email` ON `user`.`email` = `email`.`id` "
+            . "JOIN `password` ON `user`.`password` = `password`.`id` "
+            . "WHERE `email`.`value` = :email"
+        );
+        $sth->bindValue(":email", $email);
+        $sth->execute();
+        return $sth->fetch(\PDO::FETCH_ASSOC);
+    }
 
 }

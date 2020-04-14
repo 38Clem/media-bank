@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input value="<?php echo filter_var( $user->getPassword()->getValue(), FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?>" name="password" class="form-control" id="password" placeholder="Enter password">
+                    <input type="password" value="<?php echo filter_var( $user->getPassword()->getValue(), FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?>" name="password" class="form-control" id="password" placeholder="Enter password">
                     <?php if($userForm->getPasswordForm()->getError()["password"]) {?>
                         <div class="alert alert-danger" role="alert">
                             <?php echo $userForm->getPasswordForm()->getError()["password"] ?>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <label for="confirmation">Confirm Password</label>
-                    <input name="password_confirmation" class="form-control" id="confirmation" placeholder="Confirm password">
+                    <input type="password" name="password_confirmation" class="form-control" id="confirmation" placeholder="Confirm password">
                     <?php if($userForm->getPasswordForm()->getError()["confirm"]) {?>
                         <div class="alert alert-danger" role="alert">
                             <?php echo $userForm->getPasswordForm()->getError()["confirm"] ?>

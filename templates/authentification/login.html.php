@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input value="<?php echo filter_var( $password->getValue(),FILTER_SANITIZE_FULL_SPECIAL_CHARS)?>" name="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" value="<?php echo filter_var( $password->getValue(),FILTER_SANITIZE_FULL_SPECIAL_CHARS)?>" name="password" class="form-control" id="exampleInputPassword1">
                     <?php if($passwordForm->getError()["password"]){ ?>
                         <div class="alert alert-danger" role="alert">
                             <?php echo $passwordForm->getError()["password"] ?>

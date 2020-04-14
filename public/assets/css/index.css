@@ -1,5 +1,5 @@
 body{
-    background: #AF002A;
+    background: #AF002A no-repeat;
     background: -moz-linear-gradient(-45deg, #AF002A 0%, #E32636 67%, #AF002A 100%);
     background: -webkit-linear-gradient(-45deg, #AF002A 0%, #E32636 67%, #AF002A 100%);
     background: linear-gradient(135deg, #AF002A 0%, #E32636 67%, #AF002A 100%);

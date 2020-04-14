@@ -8,6 +8,16 @@
     "controller":"App\\Controller\\AuthentificationController",
     "method":"login"
   },
+  "/logout":
+  {
+    "controller":"App\\Controller\\AuthentificationController",
+    "method":"logout"
+  },
+  "/profile":
+  {
+    "controller":"App\\Controller\\UserController",
+    "method":"updateUser"
+  },
 
 "/signup": {
   "controller":"App\\Controller\\UserController",
